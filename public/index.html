@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eff0e8"><meta name="description" content="Соберите карту Карелии из 18 районов и городских округов. Неспешная географическая игра.">
+<title>Карелия по частям — географический пазл</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' rx='15' fill='%232d574b'/%3E%3Cpath d='M30 8 13 35h10l-8 13h30l-8-13h10Z' fill='%23edf0df'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/game.css"><script src="/assets/game.js" defer></script>
+</head>
+<body>
+<header class="header"><a class="brand" href="/" aria-label="Карелия по частям, главная"><span class="brand-icon">↟</span><span>КАРЕЛИЯ<span class="brand-sub">ПО ЧАСТЯМ</span></span></a><span class="header-note">Маленькое путешествие по большому краю</span><button class="quiet" id="help">Как играть <span aria-hidden="true">↗</span></button></header>
+<main>
+<section class="intro"><div><p class="eyebrow">ГЕОГРАФИЧЕСКИЙ ПАЗЛ · 18 ДЕТАЛЕЙ</p><h1>Соберите свою Карелию<span>.</span></h1><p class="subtitle">От ладожских шхер до берегов Белого моря — район за районом.</p></div><div class="stats"><div><span class="stat-label">Собрано</span><strong><span id="count">0</span><span class="stat-total"> / 18</span></strong></div><div><span class="stat-label">Время</span><strong id="timer">00:00</strong></div></div></section>
+<div class="progress-track" role="progressbar" aria-label="Собранные районы" aria-valuemin="0" aria-valuemax="18" aria-valuenow="0"><div id="progress"></div></div>
+<div class="game-actions"><button id="restart" class="primary">↻ Начать заново</button></div>
+<section class="game-layout" aria-label="Игровое поле">
+<aside class="pieces-panel"><div class="panel-heading"><h2>Части республики</h2><span id="remaining">18</span></div><p class="panel-note">Перетащите деталь на её место на карте.</p><div class="piece-list" id="pieces"><p>Загружаем карту…</p></div><div class="selection-note" id="selection-note">Можно и без перетаскивания: выберите деталь, затем её место.</div></aside>
+<div class="map-panel"><div class="map-toolbar"><span class="map-caption"><span class="live-dot"></span> РЕСПУБЛИКА КАРЕЛИЯ</span><label class="toggle"><input id="outlines" type="checkbox" checked><span>Границы районов</span></label></div><div class="map-canvas" id="canvas"><span class="geography north">СЕВЕР<br><b>↑</b></span><span class="geography west">Ф И Н Л Я Н Д И Я</span><span class="geography sea">БЕЛОЕ<br>МОРЕ</span><svg id="map" xmlns="http://www.w3.org/2000/svg" aria-label="Карта Карелии: места для деталей"><g id="targets"></g></svg><span class="map-bottom">61° — 67° с. ш.<br>Север, который хочется узнать</span><div class="map-stamp">18<br><span>ЧАСТЕЙ<br>ОДНОГО КРАЯ</span></div></div><div class="map-footer"><p id="message" role="status" aria-live="polite">Начните с любой детали. Здесь можно не спешить.</p><button id="hint" class="hint-button">✧ Подсказка</button></div></div>
+</section>
+<footer class="footer"><span>С любовью к северу <span aria-hidden="true">↟</span></span><span>Карта из вашей коллекции 2020 года</span></footer>
+</main>
+<dialog id="help-dialog"><button class="dialog-close" aria-label="Закрыть">×</button><p class="eyebrow">ВАШЕ СЕВЕРНОЕ ПУТЕШЕСТВИЕ</p><h2>Всё начинается<br>с одной детали.</h2><ol><li>Возьмите район из списка и перетащите на карту. На правильном месте он закрепится.</li><li>Или нажмите на деталь, а затем на её место. Это работает и с клавиатуры: Tab и Enter.</li><li>Если потерялись, выберите деталь и нажмите «Подсказка». Для большей сложности выключите границы.</li></ol><p>Прогресс сохраняется в этом браузере. Таймер отдыхает, пока вкладка скрыта.</p><button class="primary dialog-close-action">Попробуем</button></dialog>
+<dialog id="restart-dialog"><p class="eyebrow">НОВОЕ ПУТЕШЕСТВИЕ</p><h2>Начнём с чистой карты?</h2><p>Текущий прогресс и время будут сброшены.</p><div class="dialog-actions"><button class="quiet" id="cancel-restart">Продолжить игру</button><button class="primary" id="confirm-restart">Начать заново</button></div></dialog>
+<dialog id="win-dialog"><button class="dialog-close" aria-label="Закрыть">×</button><span class="win-tree">↟</span><p class="eyebrow">ВСЕ ДЕТАЛИ НА СВОИХ МЕСТАХ</p><h2>Теперь Карелия<br>стала чуть ближе.</h2><p id="win-summary"></p><div class="dialog-actions"><button class="quiet dialog-close-action">Рассмотреть карту</button><button class="primary" id="play-again">Собрать ещё раз</button></div></dialog>
+<noscript>Для игры включите JavaScript в браузере.</noscript>
+</body></html>

@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -eu
+PROJECT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+exec php -S "127.0.0.1:${PORT:-8000}" -t "$PROJECT_DIR/public" "$PROJECT_DIR/bin/local-router.php"
